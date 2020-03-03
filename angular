@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs/Observable";
+import { Response } from '@angular/common/http';
+
+
+interface wc{
+  data : string;
+}
+@Component({
+  selector: 'app-getcall',
+  templateUrl: './getcall.component.html',
+  styleUrls: ['./getcall.component.css']
+})
+export class GetcallComponent implements OnInit {
+  //wc$: Observable<wc[]>;
+  constructor(private http : HttpClient) { }
+  
+  input_string : any;
+
+  ngOnInit() {
+    //this.wc$ = this.http
+      //      .get<wc[]>("http://127.0.0.1:5000/?=1").toPromise().then(data => (this.input_string = JSON.parse(data)))
+    //var i =  this.http.get('http://127.0.0.1:5000/?=1');
+    return this.http.get("http://127.0.0.1:5000/?=1").toPromise().then(data => (this.input_string = JSON.stringify(data)))
+    console.log(this.input_string);
+  }
+
+    onClick(){
+      
+    }
+
+}
