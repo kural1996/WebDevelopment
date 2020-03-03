@@ -17,8 +17,9 @@ def hello():
     image_64_encode = base64.encodestring(image_read)
 
     #data = {}
-    #data['image'] = image_64_encode.decode("utf-8")
-    return str(data)
+    #data['image']
+    final_string = image_64_encode.decode("utf-8")
+    return final_string
 
 if __name__ == "__main__":
     app.run(debug=True)
